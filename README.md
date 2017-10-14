@@ -30,7 +30,7 @@
 2. Use digitalWrite command to write a value to the particular pin.
       <br>Syntax: digitalWrite(pin,value)
       * pin: GPIO pin number according to WiringPi.
-      * value: set value HIGH(1) or LOW(0) for the pin.
+      value: set value HIGH(1) or LOW(0) for the pin.
 Example for LED:
       1. Connect positive of led to GPIO pin 1(see WiringPi pin mapping) along with a resistance in series.
       2. Connect negative of led to GPIO pin 0(see WiringPi pin mapping).
