@@ -22,12 +22,22 @@
 13. Now the peripheral interface is ready, and you can use WiringPi Prolog predicates to control the GPIO pins.
 
 ## Heading
-# LED
-1. Set the pinmode to input or output using pinMode command:
+# General Purpose Input Output
+1. Set the mode of a pin to input or output using the pinMode command:
       <br>Syntax: pinMode(pin,mode)
       * pin: GPIO pin number according to WiringPi.
-      * mode: INPUT(0 for LOW) or OUTPUT(1 for HIGH) mode.
-2. Use digitalWrite command to write to the particular pin.
+      * mode: INPUT(0) or OUTPUT(1) mode.
+2. Use digitalWrite command to write a value to the particular pin.
       <br>Syntax: digitalWrite(pin,value)
       * pin: GPIO pin number according to WiringPi.
       * value: set value HIGH(1) or LOW(0) for the pin.
+Example for LED:
+      1. Connect positive of led to GPIO pin 1(see WiringPi pin mapping) along with a resistance in series.
+      2. Connect negative of led to GPIO pin 0(see WiringPi pin mapping).
+      3. Write the following code to light up the LED.
+            <br>```?- pinMode(0,0).```                --set pinmode of pin 0 to 0 for output.
+            <br>```?- pinMode(1,0).```                --set pinmode of pin 1 to 0 for output.
+            <br>```?- digitalWrite(0,0).```           --set value of pin 0 to 0 for LOW/ground.
+            <br>```?- digitalWrite(1,1).```           --set value of pin 1 to 1 for HIGH/(3.3v).
+      4. This will light up the LED.
+      5. To turn it off use the digitalWrite command to write value 0 to pin 1
