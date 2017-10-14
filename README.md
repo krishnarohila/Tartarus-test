@@ -14,10 +14,10 @@
 10. Now start prolog with sudo permission(very important):
 <br>```$ sudo swipl```
 11. Consult the `platform_pi.pl` using:
-<br>```consult('platform_pi.pl').``` 
+<br>```?- consult('platform_pi.pl').``` 
       <br>This will load all of the Tartarus predicates.
 12. Execute the command:
-<br>```start_peripherals.```
+<br>```?- start_peripherals.```
        <br>This will start the peripheral Interface. Make sure no errors occur during this step.
 13. Now the peripheral interface is ready, and you can use WiringPi Prolog predicates to control the GPIO pins.
 
