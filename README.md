@@ -2,11 +2,10 @@
 
 1. Install latest version of Raspbian on Raspberry pi. The OS can be downloaded from the following link .
 2. Install swi-prolog on the system(as root user) using the command:
-
-		```% sudo apt-get install swi-prolog```
+```% sudo apt-get install swi-prolog```
 3. Download/Copy the WiringPi-Prolog tar file(provided) onto the Raspberry pi.
 4. Unzip the WiringPi-Prolog zip file using the command:
-		```$ unzip <file_name>```
+```$ unzip <file_name>```
 5. Check the swi-prolog installation directory. Generally the location is ‘/usr/lib/swi-prolog’. To check otherwise use the following commands:
 		```$ swipl
 		?- file_search_path(swi, X).			//returns installation directory.```
