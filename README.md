@@ -1,13 +1,11 @@
 # Tartarus-test
 
 1. Install latest version of Raspbian on Raspberry pi. The OS can be downloaded from the following link .
-2. Install swi-prolog on the system(as root user) using the command:
-```% sudo apt-get install swi-prolog```
+2. Install swi-prolog on the system(as root user) using the command:<Enter>```% sudo apt-get install swi-prolog```
 3. Download/Copy the WiringPi-Prolog tar file(provided) onto the Raspberry pi.
-4. Unzip the WiringPi-Prolog zip file using the command:
-```$ unzip <file_name>```
+4. Unzip the WiringPi-Prolog zip file using the command:<Enter>```$ unzip <file_name>```
 5. Check the swi-prolog installation directory. Generally the location is ‘/usr/lib/swi-prolog’. To check otherwise use the following commands:
-		```$ swipl
+		```$ swipl<Enter>
 		?- file_search_path(swi, X).			//returns installation directory.```
 6. Copy the wipi folder from the unzipped folder(step 4) to the folder returned in step 5.
 7. Get out of superuser if still in it.
