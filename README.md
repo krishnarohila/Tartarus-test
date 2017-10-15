@@ -54,14 +54,14 @@
       ![alt text]()
 3. The address of the I2C device that we interact with is the one that appears on the table in the above image.
 4. The commands that can be used to interact with the I2C device are:
-      * <b>wiringPiI2CSetup(addr,Fd): To setup a connection with the device.
-            * Addr: The address of the device obtained in step 2. Example: 0x68 (refer image in step 2).
-            * Fd: The value returned by the setup command for furthur referencing to the device.
-      * wiringPiI2CWriteReg8(Fd,reg,val): To write a value in a particular register on the device.
-            * Fd: The value of Fd obtained from the setup command.
-            * reg: Address of the register to which the value is to be written.
-            * val: The value to be written to the particular register (reg).
-      * wiringPiI2CReadReg8(Fd,reg,Val): To read the output from a particular register on the device.
-            * Fd: The value of Fd obtained from the setup command.
-            * reg: Address of the register from which the value is to be read.
-            * Val: The value stored in the register returned by the command.
+      * <b>wiringPiI2CSetup(addr,Fd):</b> To setup a connection with the device.
+            <br>Addr: The address of the device obtained in step 2. Example: 0x68 (refer image in step 2).
+            <br>Fd: The value returned by the setup command for furthur referencing to the device.
+      * <b>wiringPiI2CWriteReg8(Fd,reg,val):</b> To write a value in a particular register on the device.
+            <br>Fd: The value of Fd obtained from the setup command.
+            <br>reg: Address of the register to which the value is to be written.
+            <br>val: The value to be written to the particular register (reg).
+      * <b>wiringPiI2CReadReg8(Fd,reg,Val):</b> To read the output from a particular register on the device.
+            <br>Fd: The value of Fd obtained from the setup command.
+            <br>reg: Address of the register from which the value is to be read.
+            <br>Val: The value stored in the register returned by the command.
