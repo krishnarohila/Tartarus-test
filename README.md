@@ -20,7 +20,8 @@
 <br>```?- start_peripherals.```
        <br>This will start the peripheral Interface. Make sure no errors occur during this step.
 13. Now the peripheral interface is ready, and you can use WiringPi Prolog predicates to control the GPIO pins.
-
+## GPIO pin mapping for WiringPi
+![alt text]()
 ## Heading
 # General Purpose Input Output
 1. Set the mode of a pin to input or output using the pinMode command:
@@ -31,7 +32,11 @@
       <br>Syntax: digitalWrite(pin,value)
       * pin: GPIO pin number according to WiringPi.
       * value: set value HIGH(1) or LOW(0) for the pin.
-<br><b>Example for LED:</b>
+3. Use digitalRead command to read the value that a particular pin is set to
+      <br>Syntax: digitalRead(pin,X)
+      * pin: GPIO pin number according to WiringPi.
+      * X: variable in which the response of the command is stored.
+<align = "left"><br><b>Example for LED:</b></align>
       1. Connect positive of led to GPIO pin 1(see WiringPi pin mapping) along with a resistance in series.
       2. Connect negative of led to GPIO pin 0(see WiringPi pin mapping).
       3. Write the following code to light up the LED.
@@ -41,3 +46,22 @@
             <br>```?- digitalWrite(1,1).```           --set value of pin 1 to 1 for HIGH/(3.3v).
       4. This will light up the LED.
       5. To turn it off use the digitalWrite command to write value 0 to pin 1
+# I2C
+1. Connect the I2C device to the Raspberry pi.
+2. Check if the device is connected properly using the command:
+<br>```$ sudo i2cdetect -y 1```
+      <br> It should show something like:
+      ![alt text]()
+3. The address of the I2C device that we interact with is the one that appears on the table in the above image.
+4. The commands that can be used to interact with the I2C device are:
+      * wiringPiI2CSetup(addr,Fd) : To setup a connection with the device.
+            * Addr: The address of the device obtained in step 2. Example: 0x68 (refer image in step 2).
+            * Fd: The value returned by the setup command for furthur referencing to the device.
+      * wiringPiI2CWriteReg8(Fd,reg,val) : To write a value in a particular register on the device.
+            * Fd: The value of Fd obtained from the setup command.
+            * reg: Address of the register to which the value is to be written.
+            * val: The value to be written to the particular register (reg).
+      * wiringPiI2CReadReg8(Fd,reg,Val): To read the output from a particular register on the device.
+            * Fd: The value of Fd obtained from the setup command.
+            * reg: Address of the register from which the value is to be read.
+            * Val: The value stored in the register returned by the command.
