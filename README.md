@@ -50,7 +50,7 @@
 1. Connect the I2C device to the Raspberry pi.
 2. Check if the device is connected properly using the command:
 <br>```$ sudo i2cdetect -y 1```
-      <br> It should show something like:
+      <br> It should show something like:<br>
       ![alt text](https://github.com/krishnarohila/Tartarus-test/blob/master/i2cdetect1.png)
 3. The address of the I2C device that we interact with is the one that appears on the table in the above image.
 4. The commands that can be used to interact with the I2C device are:
