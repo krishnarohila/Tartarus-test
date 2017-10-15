@@ -61,10 +61,12 @@
             <br>- Fd: The value of Fd obtained from the setup command.
             <br>- reg: Address of the register to which the value is to be written.
             <br>- val: The value to be written to the particular register (reg).
+            **Note: wiringPiI2CWriteReg16(Fd,reg,Val) is also available**
       * <b>wiringPiI2CReadReg8(Fd,reg,Val):</b> To read the output from a particular register on the device.
             <br>- Fd: The value of Fd obtained from the setup command.
             <br>- reg: Address of the register from which the value is to be read.
             <br>- Val: The value stored in the register returned by the command.
+            **Note: wiringPiI2CReadReg16(Fd,reg,Val) is also available**
 <br><b>Example for IMU:</b>
       1. Follow the first three steps of I2C to connect the IMU to Raspberry pi.
       2. Now once we get the address we type the following commands:
@@ -72,4 +74,4 @@
       <br>```?- wiringPiI2CWriteReg8(4,0x6b,0x00).```           --sets a value to particular registers (refer to IMU datasheet) to awaken the device.
       <br>```?- wiringPiI2CWriteReg8(4,0x6c,0x00).```           --sets a value to particular registers to awaken the device.
       <br>```?- wiringPiI2CWriteReg8(4,0x74,0x00).```           --sets a value to particular registers to awaken the device.
-      <br>```?- wiringPiI2CReadReg8(4,0x44,T).```               --returns the value of stored in 0x44 register.
+      <br>```?- wiringPiI2CReadReg8(4,0x43,T).```               --returns the value of stored in 0x43 register.
