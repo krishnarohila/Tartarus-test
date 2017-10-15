@@ -36,7 +36,7 @@
       <br>Syntax: digitalRead(pin,X)
       * pin: GPIO pin number according to WiringPi.
       * X: variable in which the response of the command is stored.
-<align = "left"><br><u>Example for LED:</u></align>
+<align = "left"><br><b>Example for LED:</b></align>
       1. Connect positive of led to GPIO pin 1(see WiringPi pin mapping) along with a resistance in series.
       2. Connect negative of led to GPIO pin 0(see WiringPi pin mapping).
       3. Write the following code to light up the LED.
@@ -65,6 +65,11 @@
             <br>- Fd: The value of Fd obtained from the setup command.
             <br>- reg: Address of the register from which the value is to be read.
             <br>- Val: The value stored in the register returned by the command.
-<br><u>Example:</u>
-1.
-2.
+<br><u>Example for IMU:</u>
+      1. Follow the first three steps of I2C to connect the IMU to Raspberry pi.
+      2. Now once we get the address we type the following commands:
+      <br>```?- wiringPiI2CSetup(0x68, Fd).```                  --returns the value of Fd(4 in this case) to be used in later commands.
+      <br>```?- wiringPiI2CWriteReg8(4,0x6b,0x00).```           --sets a value to particular registers (refer to IMU datasheet) to awaken the device.
+      <br>```?- wiringPiI2CWriteReg8(4,0x6c,0x00).```           --sets a value to particular registers to awaken the device.
+      <br>```?- wiringPiI2CWriteReg8(4,0x74,0x00).```           --sets a value to particular registers to awaken the device.
+      <br>```?- wiringPiI2CReadReg8(4,0x44,T).```               --returns the value of stored in 0x44 register.
