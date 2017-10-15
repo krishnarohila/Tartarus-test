@@ -65,7 +65,7 @@
             <br>- Fd: The value of Fd obtained from the setup command.
             <br>- reg: Address of the register from which the value is to be read.
             <br>- Val: The value stored in the register returned by the command.
-<br><u>Example for IMU:</u>
+<br><b>Example for IMU:</b>
       1. Follow the first three steps of I2C to connect the IMU to Raspberry pi.
       2. Now once we get the address we type the following commands:
       <br>```?- wiringPiI2CSetup(0x68, Fd).```                  --returns the value of Fd(4 in this case) to be used in later commands.
