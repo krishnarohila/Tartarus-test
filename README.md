@@ -21,7 +21,7 @@
        <br>This will start the peripheral Interface. Make sure no errors occur during this step.
 13. Now the peripheral interface is ready, and you can use WiringPi Prolog predicates to control the GPIO pins.
 ## GPIO pin mapping for WiringPi
-![alt text]()
+![alt text](https://github.com/krishnarohila/Tartarus-test/blob/master/gpio_readall1.png)
 ## Heading
 # General Purpose Input Output
 1. Set the mode of a pin to input or output using the pinMode command:
@@ -51,7 +51,7 @@
 2. Check if the device is connected properly using the command:
 <br>```$ sudo i2cdetect -y 1```
       <br> It should show something like:
-      ![alt text]()
+      ![alt text](https://github.com/krishnarohila/Tartarus-test/blob/master/i2cdetect1.png)
 3. The address of the I2C device that we interact with is the one that appears on the table in the above image.
 4. The commands that can be used to interact with the I2C device are:
       * <b>wiringPiI2CSetup(addr,Fd):</b> To setup a connection with the device.
