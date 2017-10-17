@@ -75,3 +75,54 @@
       <br>```?- wiringPiI2CWriteReg8(4,0x6c,0x00).```           --sets a value to particular registers to awaken the device.
       <br>```?- wiringPiI2CWriteReg8(4,0x74,0x00).```           --sets a value to particular registers to awaken the device.
       <br>```?- wiringPiI2CReadReg8(4,0x43,T).```               --returns the value of stored in 0x43 register.
+
+# Time based functions
+The commands are mentioned below:
+1. <b>delay(t):</b> Used to apply a delay of t milliseconds.
+      * t: Time in milliseconds.
+2. <b>delayMicroseconds(t):</b> Used to apply a delay of t microseconds.
+      * t: Time in microseconds.
+3. <b>millis(T):</b> It returns a number(T) representing the number of milliseconds since the program called one of the wiringPiSetup functions. It returns an unsigned 32-bit number which wraps after 49 days.
+      * T: Time in milliseconds returned by the function.
+4. <b>micros(T):</b> It returns a number representing the number of microseconds since the program called one of the wiringPiSetup functions. It returns an unsigned 32-bit number which wraps after approximately 71 minutes.
+      * T: Time in microseconds returned by the function.
+
+<b>Example for LED blinking:</b>
+* Commect a LED to Raspberry Pi at GPIO pins 1(HIGH) and 0(LOW).
+* Write the following code in a prolog file(in the working directory).
+<br>```loop(C):-
+		(C<20 ->
+				(0 is mod(C,2)->
+				digitalWrite(1,0),
+				delayMicroseconds(1000000),
+				writeln('second'),
+		millis(T),
+		write(T),
+				C1 is C+1,
+				loop(C1)
+				;
+				digitalWrite(1,1),
+				delayMicroseconds(1000000),
+				writeln('first'),
+				C1 is C+1,
+				loop(C1)
+				)).
+
+
+start:-
+		pinMode(1, 1),
+		pinMode(0, 1),
+		digitalWrite(0,0),
+		digitalWrite(1,1),
+		C is 1,
+		loop(C),
+		writeln('done').```
+*  Now start prolog with sudo permission(very important):
+<br>```$ sudo swipl```
+* Consult the `platform_pi.pl` using:
+<br>```?- consult('platform_pi.pl').``` 
+      <br>This will load all of the Tartarus predicates.
+* Execute the command:
+<br>```?- start_peripherals.```
+* Execute the following command to see the LED blink and the output of millis command on terminal.
+<br>```?- start.```
