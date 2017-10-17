@@ -36,7 +36,6 @@
       <br>Syntax: digitalRead(pin,X)
       * pin: GPIO pin number according to WiringPi.
       * X: variable in which the response of the command is stored.
-
 <br><b>Example for LED:</b>
       1. Connect positive of led to GPIO pin 1(see WiringPi pin mapping) along with a resistance in series.
       2. Connect negative of led to GPIO pin 0(see WiringPi pin mapping).
@@ -68,7 +67,6 @@
             <br>- reg: Address of the register from which the value is to be read.
             <br>- Val: The value stored in the register returned by the command.
             **Note: wiringPiI2CReadReg16(Fd,reg,Val) is also available**
-
 <br><b>Example for IMU:</b>
       1. Follow the first three steps of I2C to connect the IMU to Raspberry pi.
       2. Now once we get the address we type the following commands:
