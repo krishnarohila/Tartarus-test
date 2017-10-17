@@ -90,34 +90,8 @@ The commands are mentioned below:
 <b>Example for LED blinking:</b>
 * Commect a LED to Raspberry Pi at GPIO pins 1(HIGH) and 0(LOW).
 * Write the following code in a prolog file(in the working directory).
-<br>```loop(C):-
-		(C<20 ->
-				(0 is mod(C,2)->
-				digitalWrite(1,0),
-				delayMicroseconds(1000000),
-				writeln('second'),
-		millis(T),
-		write(T),
-				C1 is C+1,
-				loop(C1)
-				;
-				digitalWrite(1,1),
-				delayMicroseconds(1000000),
-				writeln('first'),
-				C1 is C+1,
-				loop(C1)
-				)).
-
-
-start:-
-		pinMode(1, 1),
-		pinMode(0, 1),
-		digitalWrite(0,0),
-		digitalWrite(1,1),
-		C is 1,
-		loop(C),
-		writeln('done').```
-*  Now start prolog with sudo permission(very important):
+<br> [Blink_Led](https://github.com/krishnarohila/Tartarus-test/blob/master/blink_led.pl)
+* Now start prolog with sudo permission(very important):
 <br>```$ sudo swipl```
 * Consult the `platform_pi.pl` using:
 <br>```?- consult('platform_pi.pl').``` 
