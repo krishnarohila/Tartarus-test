@@ -36,7 +36,8 @@
       <br>Syntax: digitalRead(pin,X)
       * pin: GPIO pin number according to WiringPi.
       * X: variable in which the response of the command is stored.
-<align = "left"><br><b>Example for LED:</b></align>
+
+<br><b>Example for LED:</b>
       1. Connect positive of led to GPIO pin 1(see WiringPi pin mapping) along with a resistance in series.
       2. Connect negative of led to GPIO pin 0(see WiringPi pin mapping).
       3. Write the following code to light up the LED.
@@ -67,6 +68,7 @@
             <br>- reg: Address of the register from which the value is to be read.
             <br>- Val: The value stored in the register returned by the command.
             **Note: wiringPiI2CReadReg16(Fd,reg,Val) is also available**
+
 <br><b>Example for IMU:</b>
       1. Follow the first three steps of I2C to connect the IMU to Raspberry pi.
       2. Now once we get the address we type the following commands:
@@ -87,7 +89,7 @@ The commands are mentioned below:
 4. <b>micros(T):</b> It returns a number representing the number of microseconds since the program called one of the wiringPiSetup functions. It returns an unsigned 32-bit number which wraps after approximately 71 minutes.
       * T: Time in microseconds returned by the function.
 
-<b>Example for LED blinking:</b>
+<br><b>Example for LED blinking:</b>
 * Commect a LED to Raspberry Pi at GPIO pins 1(HIGH) and 0(LOW).
 * Write the following code in a prolog file(in the working directory).
 <br> [Blink_Led](https://github.com/krishnarohila/Tartarus-test/blob/master/blink_led.pl)
