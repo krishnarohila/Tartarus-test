@@ -100,3 +100,21 @@ The commands are mentioned below:
 <br>```?- start_peripherals.```
 * Execute the following command to see the LED blink and the output of millis command on terminal.
 <br>```?- start.```
+
+# PWM commands:
+1. <b>digitalWriteByte(t,_):</b> This function writes the 8-bit byte supplied to the first 8 GPIO pins.It takes two write operations to the Pi’s GPIO hardware.
+      * t: number that will be converted to 8 bit integer and written to GPIO pins 0(lower bits) to 7(higher bits).
+2. <b>pwmSetMode(t):</b> The PWM generator can run in 2 modes – “balanced” and “mark:space”. 
+      * t: 0 for "balanced" mode and 1 for "mark:space" mode.
+3. <b>pwmSetRange(t):</b> This function sets the range register in the PWM generator. The default is 1024.
+      * t: Integer value for the range.
+4. <b>pwmSetClock(t):</b> This function sets the divisor for the PWM clock.
+      * t: Integer value for the clock.
+5. <b>piBoardRev(T):</b> This function returns the board revision of the Raspberry Pi. It will be either 1 or 2. Some of the BCM_GPIO pins changed number and function when moving from board revision 1 to 2, so if you are using BCM_GPIO pin numbers, then you need to be aware of the differences.
+      * T: Return valiable which is either 1 or 2.
+6. <b>wpiPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied wiringPi pin. It takes the board revision into account.
+      * pin: wiringPi pin number.
+      * T: Value of the BCM_GPIO pin number is returned in this variable.
+7. <b>physPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied physical pin on the P1 connector.
+      * pin: wiringPi pin number.
+      * T: Value of the physical pin number is returned in this variable.
