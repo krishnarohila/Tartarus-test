@@ -27,7 +27,7 @@
 1. Set the mode of a pin to input or output using the pinMode command:
       <br>Syntax: pinMode(pin,mode)
       * pin: GPIO pin number according to WiringPi.
-      * mode: INPUT(0) or OUTPUT(1) mode.
+      * mode: INPUT(0) or OUTPUT(1) mode or PWM_OUTPUT(2).
 2. Use digitalWrite command to write a value to the particular pin.
       <br>Syntax: digitalWrite(pin,value)
       * pin: GPIO pin number according to WiringPi.
@@ -112,9 +112,12 @@ The commands are mentioned below:
       * t: Integer value for the clock.
 5. <b>piBoardRev(T):</b> This function returns the board revision of the Raspberry Pi. It will be either 1 or 2. Some of the BCM_GPIO pins changed number and function when moving from board revision 1 to 2, so if you are using BCM_GPIO pin numbers, then you need to be aware of the differences.
       * T: Return valiable which is either 1 or 2.
-6. <b>wpiPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied wiringPi pin. It takes the board revision into account.
+6. <b>pwmSetMode(pin,value):</b> This function is used to give pwm output values to a PWM pin.
+      * pin: The pin number to which the pwm output is to be written. On raspberry pi the gpio pin 1 is used for pwm output. Other pins may also be available depending on versions of pi.
+      * value: Value to be written to pin ranging from 0 to 1024.
+7. <b>wpiPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied wiringPi pin. It takes the board revision into account.
       * pin: wiringPi pin number.
       * T: Value of the BCM_GPIO pin number is returned in this variable.
-7. <b>physPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied physical pin on the P1 connector.
+8. <b>physPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied physical pin on the P1 connector.
       * pin: wiringPi pin number.
       * T: Value of the physical pin number is returned in this variable.
