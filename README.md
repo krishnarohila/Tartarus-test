@@ -133,5 +133,5 @@ The commands are mentioned below:
       <br>This will load all of the Tartarus predicates.
 * Execute the command:
 <br>```?- start_peripherals.```
-* Execute the following command to see the LED blink and the output of millis command on terminal.
+* Execute the following command to see the LED intensity change from minimun to maximum and back to minimum.
 <br>```?- start.```
