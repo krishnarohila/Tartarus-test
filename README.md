@@ -121,3 +121,17 @@ The commands are mentioned below:
 8. <b>physPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied physical pin on the P1 connector.
       * pin: wiringPi pin number.
       * T: Value of the physical pin number is returned in this variable.
+
+<br><b>Example for LED blinking:</b>
+* Commect a LED to Raspberry Pi at GPIO pins 1(HIGH) and 0(LOW).
+* Write the following code in a prolog file(in the working directory).
+<br> [PWM_led](https://github.com/krishnarohila/Tartarus-test/blob/master/pwmled.pl)
+* Now start prolog with sudo permission(very important):
+<br>```$ sudo swipl```
+* Consult the `platform_pi.pl` using:
+<br>```?- consult('platform_pi.pl').``` 
+      <br>This will load all of the Tartarus predicates.
+* Execute the command:
+<br>```?- start_peripherals.```
+* Execute the following command to see the LED blink and the output of millis command on terminal.
+<br>```?- start.```
