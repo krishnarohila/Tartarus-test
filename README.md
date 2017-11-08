@@ -121,6 +121,11 @@ The commands are mentioned below:
 8. <b>physPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied physical pin on the P1 connector.
       * pin: wiringPi pin number.
       * T: Value of the physical pin number is returned in this variable.
+```
+Note: If you want to use a Pin as a PWM pin, set its mode to 2 using the command pinMode.
+For e.g., pinMode(1,2) 
+This will allow you to use Pin 1 as a PWM output pin (0 is for input, 1 for output and 2 for PWM).
+```
 
 <br><b>Example for LED blinking:</b>
 * Commect a LED to Raspberry Pi at GPIO pins 1(HIGH) and 0(LOW).
