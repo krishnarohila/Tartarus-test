@@ -112,7 +112,7 @@ The commands are mentioned below:
       * t: Integer value for the clock.
 5. <b>piBoardRev(T):</b> This function returns the board revision of the Raspberry Pi. It will be either 1 or 2. Some of the BCM_GPIO pins changed number and function when moving from board revision 1 to 2, so if you are using BCM_GPIO pin numbers, then you need to be aware of the differences.
       * T: Return valiable which is either 1 or 2.
-6. <b>pwmSetMode(pin,value):</b> This function is used to give pwm output values to a PWM pin.
+6. <b>pwmWrite(pin,value):</b> This function is used to give pwm output values to a PWM pin.
       * pin: The pin number to which the pwm output is to be written. On raspberry pi the gpio pin 1 is used for pwm output. Other pins may also be available depending on versions of pi.
       * value: Value to be written to pin ranging from 0 to 1024.
 7. <b>wpiPinToGpio(pin,T):</b> This function returns the BCM_GPIO pin number of the supplied wiringPi pin. It takes the board revision into account.
